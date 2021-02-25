@@ -1,12 +1,22 @@
 package com.db.hackathon.onlineBanking.model;
 
+
+import org.springframework.cloud.gcp.data.datastore.core.mapping.Entity;
+import org.springframework.cloud.gcp.data.datastore.core.mapping.Field;
+import org.springframework.data.annotation.Id;
+
+@Entity(name = "customer")
 public class CustomerDetails {
+	
+	@Id
+	private String id;
 
 	private String firstName;
 	private String lastName;
 	private int age;
 	private String gender;
 	private String address;
+	
 	
 	public CustomerDetails() {
 		super();

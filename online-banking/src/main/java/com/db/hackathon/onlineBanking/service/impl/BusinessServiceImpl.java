@@ -1,56 +1,57 @@
 package com.db.hackathon.onlineBanking.service.impl;
 
+import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.db.hackathon.onlineBanking.exception.DatastoreException;
 import com.db.hackathon.onlineBanking.model.CustomerDetails;
 import com.db.hackathon.onlineBanking.service.BusinessService;
-import com.google.api.core.ApiFuture;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.DocumentSnapshot;
-import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.WriteResult;
-import com.google.firebase.cloud.FirestoreClient;
+import com.db.hackathon.repository.CustomerRepository;
 
 @Service
 public class BusinessServiceImpl implements BusinessService {
+	
+	@Autowired
+	CustomerRepository customerRepository;
 
 	public static final String COLLECTION_NAME="customers";  
 	 
 	@Override
 	public String createCustomer(CustomerDetails customerDetails) throws InterruptedException, ExecutionException {
 		System.out.println("Customer details:" + customerDetails);
-		Firestore dbFirestore = FirestoreClient.getFirestore();  
-		ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection(COLLECTION_NAME).document(customerDetails.getFirstName()).set(customerDetails);  
-		return collectionsApiFuture.get().getUpdateTime().toString(); 
+		CustomerDetails resp = customerRepository.save(customerDetails);
+		return resp.toString(); 
 	}
 
 	@Override
 	public CustomerDetails getCustomerDetails(String customerId) throws InterruptedException, ExecutionException {
-		Firestore dbFirestore = FirestoreClient.getFirestore();  
-		DocumentReference documentReference = dbFirestore.collection(COLLECTION_NAME).document(customerId);  
-		ApiFuture<DocumentSnapshot> future = documentReference.get();  
-		DocumentSnapshot document = future.get();  
-		CustomerDetails customerDetails = null;  
-		if(document.exists()) {  
-			customerDetails = document.toObject(CustomerDetails.class); 
-		}
-		return customerDetails;  
+		Optional<CustomerDetails> response = customerRepository.findById(customerId);
+		  
+		
+		return response.get();  
 	}
 
 	@Override
 	public String updateCustomerDetails(CustomerDetails customerDetails) throws InterruptedException, ExecutionException {
-		Firestore dbFirestore = FirestoreClient.getFirestore();  
-		ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection(COLLECTION_NAME).document(customerDetails.getFirstName()).set(customerDetails);  
-		return collectionsApiFuture.get().getUpdateTime().toString();  
+		//customerRepository.performTransaction(null)
+		return null;
 	}
 
 	@Override
 	public String deleteCustomerDetails(String customerId) {
-		 Firestore dbFirestore = FirestoreClient.getFirestore();  
-		 ApiFuture<WriteResult> writeResult = dbFirestore.collection(COLLECTION_NAME).document(customerId).delete();  
-		 return "Document with Patient ID "+customerId+" has been deleted";  
+		String result = null;
+		try {
+		if(customerRepository.existsById(customerId)) {
+		customerRepository.deleteById(customerId);
+		result = "true";
+		}
+		
+	}catch (IllegalArgumentException ex) {
+		throw new DatastoreException("Error deleting customer due to Null Customer Id", ex);
 	}
-
+		return result;
+	}
 }

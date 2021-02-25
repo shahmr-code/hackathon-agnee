@@ -23,7 +23,7 @@ public class FireBaseConfig {
 	@PostConstruct
 	public void initialize() {  
 		 try {  
-			 FileInputStream serviceAccount =  new FileInputStream("");  
+			 FileInputStream serviceAccount =  new FileInputStream(aceessPath);  
 			 FirebaseOptions options = new FirebaseOptions.Builder()  
 			 .setCredentials(GoogleCredentials.fromStream(serviceAccount))  
 			 .setDatabaseUrl(dbUrl)
