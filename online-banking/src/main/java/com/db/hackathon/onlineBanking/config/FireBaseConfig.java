@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
+//import com.google.firebase.FirebaseApp;
+//import com.google.firebase.FirebaseOptions;
 
 @Service
 public class FireBaseConfig {
@@ -22,7 +22,7 @@ public class FireBaseConfig {
 	
 	@PostConstruct
 	public void initialize() {  
-		 try {  
+		 /*try {  
 			 FileInputStream serviceAccount =  new FileInputStream(aceessPath);  
 			 FirebaseOptions options = new FirebaseOptions.Builder()  
 			 .setCredentials(GoogleCredentials.fromStream(serviceAccount))  
@@ -31,6 +31,6 @@ public class FireBaseConfig {
 			 FirebaseApp.initializeApp(options);  
 		 } catch (Exception e) {  
 			 e.printStackTrace();  
-		 }
+		 }*/
 	}
 }

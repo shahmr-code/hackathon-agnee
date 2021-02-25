@@ -2,8 +2,9 @@ package com.db.hackathon.onlineBanking;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.gcp.data.datastore.repository.config.EnableDatastoreRepositories;
 
-
+@EnableDatastoreRepositories
 @SpringBootApplication
 public class OnlineBankingApplication {
 

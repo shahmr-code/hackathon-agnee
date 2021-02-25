@@ -6,13 +6,13 @@ import java.util.concurrent.ExecutionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.db.hackathon.onlineBanking.repository.CustomerRepository;
 import com.db.hackathon.onlineBanking.exception.DatastoreException;
 import com.db.hackathon.onlineBanking.model.CustomerDetails;
 import com.db.hackathon.onlineBanking.service.BusinessService;
-import com.db.hackathon.repository.CustomerRepository;
 
-@Service
-public class BusinessServiceImpl implements BusinessService {
+@Service("BusinessServiceDataStore")
+public class BusinessServiceDataStoreImpl implements BusinessService {
 	
 	@Autowired
 	CustomerRepository customerRepository;
@@ -27,6 +27,25 @@ public class BusinessServiceImpl implements BusinessService {
 	}
 
 	@Override
+	public CustomerDetails getCustomerDetails(String customerId) throws InterruptedException, ExecutionException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String updateCustomerDetails(CustomerDetails customerDetails)
+			throws InterruptedException, ExecutionException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String deleteCustomerDetails(String customerId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/*@Override
 	public CustomerDetails getCustomerDetails(String customerId) throws InterruptedException, ExecutionException {
 		Optional<CustomerDetails> response = customerRepository.findById(customerId);
 		  
@@ -53,5 +72,5 @@ public class BusinessServiceImpl implements BusinessService {
 		throw new DatastoreException("Error deleting customer due to Null Customer Id", ex);
 	}
 		return result;
-	}
+	}*/
 }

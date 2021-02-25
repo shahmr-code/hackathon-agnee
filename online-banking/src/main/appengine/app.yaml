@@ -1,0 +1,5 @@
+service: online-banking
+env: flex
+runtime: java
+env_variables:
+  GOOGLE_APPLICATION_CREDENTIALS: ./cloud-datastore-api-credentials.json
