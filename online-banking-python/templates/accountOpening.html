@@ -1,0 +1,200 @@
+<html>
+    <head>
+        <style>
+       .container{
+            padding: 1%;
+            width: 60%;
+            border-radius:8px;
+            border: 2px solid green;
+            background-color: rgba(0,0,0,0.6);
+            margin: 30px auto;
+        }
+        h1{
+            color: white;
+        }
+        label{
+            color: white;
+            font-size: 30px;
+            font-weight: 900;
+        }
+        .lab{
+				color:white;
+				float:left;
+				text-align:left;
+				font-size:25px;
+			}
+        input{
+            padding:1%;
+            font-size: 150%;
+            width:65%;
+            background-color:white;
+            border:2px solid green;
+            color:black;
+            float:left;
+            text-align:center;
+        }
+        input::placeholder {
+				text-align:center;
+			}
+        button{
+			width:100%;
+			height:50px;
+		}
+        .ques{
+            width:30%;
+            float:left;
+            text-align:left;
+            font-size:25px;
+		}
+        .set{
+            padding: 20px;
+        }
+        #submit{
+			width:100%;
+			border-radius: 4px;
+			color: white;
+            font-size: 25px;
+			cursor: pointer;
+			padding: 12px 20px;
+            border: 2px solid black;
+			transition: all .1s linear;
+            background-color: green;
+		}
+		#submit:active {
+			box-shadow: 0 2px 0 #006599;
+			transform: translateY(10px);
+		}
+        .heading{
+            padding-top: 5px;
+            font-size: 40px;
+            text-align: center;
+        }
+        .required {
+            color: red;
+        }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p class="heading">Account Opening Form</p>
+        </div>
+        <div class=container>
+            <form action="">
+                <div class="set">
+                    <div class="ques">
+                        <label>Firstname</label><span class="required">*</span>    
+                    </div>
+                    <div class="inp"> 
+                        <input type="text" name="fname" value="" title="Please add First Name" required />
+                    </div>
+                    <div style = "clear:both" ></div>
+                </div>
+                <div class="set">
+                    <div class="ques">
+                        <label>Lastname</label><span class="required">*</span>     
+                    </div>
+                    <div class="inp"> 
+                        <input type="text" name="lname" value="" title="Please add Last Name" required />
+                    </div>   
+                    <div style = "clear:both" ></div>
+                </div>
+                <div class="set">
+                    <div class="ques">
+                        <label>Phone Number</label><span class="required">*</span>     
+                    </div>
+                    <div class="inp">
+                        <input type="text" name="number" value="" title="Please add Phone Number" required />
+                    </div>
+                    <div style = "clear:both" ></div>
+                </div>
+                <div class="set">
+                    <div class="ques">
+                        <label>PAN Card</label><span class="required">*</span>      
+                    </div>
+                    <div class="inp">
+                        <input type="text" name="pan" value="" required />
+                    </div>
+                    <div style = "clear:both" ></div>
+                </div>
+                <div class="set">
+                    <div class="ques">
+                        <label>Aadhar Card</label><span class="required">*</span>     
+                    </div>
+                    <div class="inp"> 
+                        <input type="text" name="aadhar" value="" required/>
+                    </div>   
+                    <div style = "clear:both" ></div>
+                </div>
+                <div class="set">
+                    <div class="ques">
+                        <label>Date of Birth</label><span class="required">*</span>     
+                    </div>
+                    <div class="inp"> 
+                        <input type="text" name="date" value="" placeholder="DD-MM-YYYY" required/>
+                    </div>   
+                    <div style = "clear:both" ></div>
+                </div>
+                <div class="set">
+                    <div class="ques">
+                        <label>Email Address</label><span class="required">*</span>     
+                    </div>
+                    <div class="inp"> 
+                        <input type="text" name="email" value="" required/>
+                    </div>   
+                    <div style = "clear:both" ></div>
+                </div>
+                <h1>Address</h1>
+                <div class="set">
+                    <div class="ques"> 
+                        <label>Pincode</label><span class="required">*</span>    
+                    </div>
+                    <div class="inp"> 
+                        <input type="text" name="pincode" value="" required/><br>
+                        <div style = "clear:both" ></div>
+                    </div>
+                </div>
+                <div class="set">
+                    <div class="ques">
+                        <label>State</label><span class="required">*</span>    
+                    </div>
+                    <div class="inp">
+                        <input type="text" name="state" value="" required/><br>
+                        <div style = "clear:both" ></div>
+                    </div>
+                </div>
+                <div class="set">    
+                    <div class="ques"> 
+                        <label>Landmark</label><span class="required">*</span> 
+                    </div>   
+                    <div class="inp">
+                        <input type="text" name="addressLine" value="" required/><br>
+                        <div style = "clear:both" ></div>
+                    </div> 
+                </div>
+                <div class="set">    
+                    <div class="ques"> 
+                        <label>ID Upload</label> 
+                    </div>   
+                    <div class="inp">
+                        <input type="file" name="idupload" accept="image/jpeg, image/png, application/pdf" /><br>
+                        <div style = "clear:both" ></div>
+                    </div> 
+                </div>
+                <div class="set">    
+                    <div class="ques"> 
+                        <label>Signature</label> 
+                    </div>   
+                    <div class="inp">
+                        <input type="file" name="signature" accept="image/jpeg, image/png, application/pdf" /><br>
+                        <div style = "clear:both" ></div>
+                    </div> 
+                </div>
+                
+                <div class = "set" >
+                    <button type = "submit" id="submit" >SUBMIT</button>
+                    <div style = "clear:both" ></div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
