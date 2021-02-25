@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+           .container{
+            padding: 1%;
+            width: 60%;
+            border-radius:8px;
+            border: 2px solid green;
+            background-color: rgba(0,0,0,0.6);
+            margin: 30px auto;
+        }
+        .heading{
+            padding-top: 5px;
+            font-size: 40px;
+            text-align: center;
+        }
+        #submit{
+			width:100%;
+			border-radius: 4px;
+			color: white;
+            font-size: 25px;
+			cursor: pointer;
+			padding: 12px 20px;
+            border: 2px solid black;
+			transition: all .1s linear;
+            background-color: green;
+		}
+		#submit:active {
+			box-shadow: 0 2px 0 #006599;
+			transform: translateY(10px);
+		}
+        .set{
+            padding: 20px;
+        }
+        </style>
+        <script>
+            function login(){
+                window.location.href = "login.html";
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <p class="heading">            
+                Hello User. Welcome to Online Banking
+            </p>
+        </div>
+        <div class="container">
+            <div>
+                <div class =  "set"><a href = "login.html" ><button id="submit" class="do you want to login">Login</button></a></div>
+                <div class =  "set"><a href = "accountOpening.html" ><button id="submit" class="do you want to open account">Account Opening</button></a></div>
+            </div>
+        </div>
+    </body>
+</html>
