@@ -1,20 +1,34 @@
 package com.db.hackathon.onlineBanking.model;
 
+
+import org.springframework.cloud.gcp.data.datastore.core.mapping.Entity;
+import org.springframework.cloud.gcp.data.datastore.core.mapping.Field;
+import org.springframework.data.annotation.Id;
+
+@Entity(name = "customer")
 public class CustomerDetails {
+	
+	@Id
+	private String id;
 
 	private String firstName;
 	private String lastName;
-	private String phoneNumber;
-	private String aadharNumber;
-	private String pancardNumber;
-	private String Dob;
-	private String email;
-	private Address address;
-	private String idCardDocument;
-	private String signatureDocument;
+	private int age;
+	private String gender;
+	private String address;
+	
 	
 	public CustomerDetails() {
 		super();
+	}
+
+	public CustomerDetails(String firstName, String lastName, int age, String gender, String address) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+		this.gender = gender;
+		this.address = address;
 	}
 
 	public String getFirstName() {
@@ -33,75 +47,80 @@ public class CustomerDetails {
 		this.lastName = lastName;
 	}
 
-	public String getPhoneNumber() {
-		return phoneNumber;
+	public int getAge() {
+		return age;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setAge(int age) {
+		this.age = age;
 	}
 
-	public String getAadharNumber() {
-		return aadharNumber;
+	public String getGender() {
+		return gender;
 	}
 
-	public void setAadharNumber(String aadharNumber) {
-		this.aadharNumber = aadharNumber;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
-	public String getPancardNumber() {
-		return pancardNumber;
-	}
-
-	public void setPancardNumber(String pancardNumber) {
-		this.pancardNumber = pancardNumber;
-	}
-
-	public String getDob() {
-		return Dob;
-	}
-
-	public void setDob(String dob) {
-		Dob = dob;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public Address getAddress() {
+	public String getAddress() {
 		return address;
 	}
 
-	public void setAddress(Address address) {
+	public void setAddress(String address) {
 		this.address = address;
 	}
 
-	public String getIdCardDocument() {
-		return idCardDocument;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((address == null) ? 0 : address.hashCode());
+		result = prime * result + age;
+		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
+		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
+		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
+		return result;
 	}
 
-	public void setIdCardDocument(String idCardDocument) {
-		this.idCardDocument = idCardDocument;
-	}
-
-	public String getSignatureDocument() {
-		return signatureDocument;
-	}
-
-	public void setSignatureDocument(String signatureDocument) {
-		this.signatureDocument = signatureDocument;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CustomerDetails other = (CustomerDetails) obj;
+		if (address == null) {
+			if (other.address != null)
+				return false;
+		} else if (!address.equals(other.address))
+			return false;
+		if (age != other.age)
+			return false;
+		if (firstName == null) {
+			if (other.firstName != null)
+				return false;
+		} else if (!firstName.equals(other.firstName))
+			return false;
+		if (gender == null) {
+			if (other.gender != null)
+				return false;
+		} else if (!gender.equals(other.gender))
+			return false;
+		if (lastName == null) {
+			if (other.lastName != null)
+				return false;
+		} else if (!lastName.equals(other.lastName))
+			return false;
+		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "CustomerDetails [firstName=" + firstName + ", lastName=" + lastName + ", phoneNumber=" + phoneNumber
-				+ ", aadharNumber=" + aadharNumber + ", pancardNumber=" + pancardNumber + ", Dob=" + Dob + ", email="
-				+ email + ", address=" + address + ", idCardDocument=" + idCardDocument + ", signatureDocument="
-				+ signatureDocument + "]";
+		return "CustomerDetails [firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", gender="
+				+ gender + ", address=" + address + "]";
 	}
+
 }

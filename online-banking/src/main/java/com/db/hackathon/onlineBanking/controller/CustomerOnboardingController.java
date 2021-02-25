@@ -19,7 +19,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.db.hackathon.onlineBanking.model.CustomerDetails;
 import com.db.hackathon.onlineBanking.service.BusinessService;
 import com.db.hackathon.onlineBanking.service.FileUploadService;
-
 import io.swagger.annotations.Api;
 
 @RestController
