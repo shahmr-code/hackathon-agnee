@@ -1,6 +1,12 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+        <title>Open Account</title>
         <style>
+        body{
+            font-family: 'Open Sans';
+        }
        .container{
             padding: 1%;
             width: 60%;
@@ -71,6 +77,47 @@
         }
         .required {
             color: white;
+        }
+        @media(max-width:1050px){
+            .ques{
+                width:30%;
+                float:left;
+                text-align:left;
+                font-size:25px;
+            }	
+		}
+			
+        @media(max-width:800px){
+            .ques{
+                width:100%;
+                text-align:center;
+                font-size:25px;
+            }	
+            input{
+                padding:1%;
+                font-size: 150%;
+                width:100%;
+                background-color:white;
+                border:2px solid green;
+                color:black;
+                text-align:center;
+            }
+            .container{
+                padding: 1%;
+                width: 90%;
+                border-radius:8px;
+                border: 2px solid green;
+                background-color: rgba(0,0,0,0.6);
+                margin: 30px auto;
+            }
+            h1{
+                text-align: center;
+                color: white;
+            }
+            .set{
+                padding: 5px;
+            }
+            
         }
         </style>
     </head>

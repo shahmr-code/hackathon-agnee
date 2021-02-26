@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <title>Dashboard</title>
+        <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+        <style>
+        body{
+            font-family: 'Open Sans';
+        }
+        .container{
+            padding: 1%;
+            width: 60%;
+            border-radius:8px;
+            border: 2px solid green;
+            background-color: rgba(0,0,0,0);
+            margin: 30px auto;
+        }
+        .acctDetail{
+            background-color: rgba(0,0,0,0.6);
+            color: white;
+            text-align: center;
+            padding: 2%;
+            border-radius:8px;
+        }
+        .normal{
+           font-size: 25px;
+        }
+        .balance{
+            font-size: 45px;
+            font-weight: 900;
+            margin: 2%;
+        }
+        .acctNumber{
+            font-size: 30px;
+            font-weight: 900;
+            margin: 1.5% 1.5% 3% 1.5%;
+        }
+        .otherLink{
+            display: inline-block;
+            width: 200px;
+            margin: 0px 2% 0px 2% ;
+        }
+        .empty{
+            background-color: white;
+        }
+        .recentTxn{
+            font-weight: 750;
+            font-size: 35px;
+            text-align: center;
+        }
+        .allTxn{
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 8px;
+            padding: 2%;
+        }
+        .txnDate{
+            background-color: rgba(0,0,0,0.6);
+            color: white;
+            text-align: center;
+            padding: 2%;
+            border-radius:8px;
+            font-size: 30px;
+        }
+        .txnValue{
+            display: inline-block;
+            width: 200px;
+            margin: 0px 2% 0px 2% ;
+        }
+        .txndetail{
+            font-size: 30px;
+        }
+        .hrAcctDetails{
+            border: 2px dashed white;
+        }
+        hr{
+            margin:2% 5% 2% 5%;
+        }
+        a{
+            color:white;
+            text-decoration: none;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="acctDetail">
+                <div class="acctType">
+                    <label class="normal">Saving Account</label>
+                    <p class="acctNumber">1205976264</p>
+                </div>
+                    <label class="normal">Available Balance</label>
+                    <p class="balance">7500 INR</p>
+                <hr class="hrAcctDetails">
+                <div class="normal">
+                    <a href="#" class="otherLink">Statement</a> 
+                    <a href="#" class="otherLink">Debit Card</a> 
+                    <a href="#" class="otherLink">Services</a> 
+                </div>
+            </div>
+            <hr style="border: 2px dashed black">
+            <div>
+                <p class="recentTxn">Recent Transaction</p>
+            </div>
+            <hr style="border: 2px dashed black">
+            <div class="allTxn">
+                <div class="eachTxn">
+                    <p class="txnDate">24-01-2021</p>
+                    <div class="txndetail">
+                        <p class="txnValue txnRef">Ref: 15589232</p>
+                        <p class="txnValue modeOfTxn">UPI/AmitJain</p>
+                        <p class="txnValue txnAmount">Cr 1000 INR</p>
+                        <div style = "clear:both" ></div>
+                </div>
+                <div class="eachTxn">
+                    <p class="txnDate">25-12-2020</p>
+                    <div class="txndetail">
+                        <p class="txnValue txnRef">Ref: 15589185</p>
+                        <p class="txnValue modeOfTxn">Salary</p>
+                        <p class="txnValue txnAmount">Cr 7000 INR</p>
+                        <div style = "clear:both" ></div>
+                    </div>
+                </div>
+                <div class="eachTxn">
+                    <p class="txnDate">01-12-2020</p>
+                    <div class="txndetail">
+                        <p class="txnValue txnRef">Ref: 15586571</p>
+                        <p class="txnValue modeOfTxn">NEFT/105678954</p>
+                        <p class="txnValue txnAmount">Dr 2587 INR</p>
+                        <div style = "clear:both" ></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

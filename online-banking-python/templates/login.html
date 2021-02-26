@@ -1,7 +1,12 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+        <title>Login</title>
         <style>
+        body{
+            font-family: 'Open Sans';
+        }
        .container{
             padding: 1%;
             width: 60%;
@@ -22,7 +27,7 @@
 				color:white;
 				text-align:left;
 				font-size:25px;
-			}
+		}
         input{
             padding:1%;
             font-size: 150%;
@@ -59,7 +64,7 @@
             border: 2px solid black;
 			transition: all .1s linear;
             background-color: green;
-		}
+        }
 		#submit:active {
 			box-shadow: 0 2px 0 #006599;
 			transform: translateY(10px);
@@ -81,7 +86,7 @@
             }	
 		}
 			
-        @media(max-width:650px){
+        @media(max-width:800px){
             .ques{
                 width:100%;
                 text-align:center;
@@ -102,21 +107,20 @@
                 border-radius:8px;
                 border: 2px solid green;
                 background-color: rgba(0,0,0,0.6);
-                margin: 30px auto;
-                
+                margin: 30px auto;              
             }
         }
         </style>
     </head>
     <body>
         <div>
-            <p class="heading">Hello User. Please provide Customer Id and Password to login</p>
+            <p class="heading">Hello User. Please provide Username and Password to login</p>
         </div>
         <div class=container>
             <form action="">
                 <div class="set">
                     <div class="ques">
-                        <label>Customer Id</label><span class="required">*</span>    
+                        <label>Username</label><span class="required">*</span>    
                     </div>
                     <div class="inp"> 
                         <input type="text" name="fname" value="" title="Please provide your customer id" required />
