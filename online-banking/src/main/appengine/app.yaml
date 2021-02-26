@@ -1,5 +1,7 @@
-service: online-banking
 env: flex
 runtime: java
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instance: 4
 env_variables:
   GOOGLE_APPLICATION_CREDENTIALS: ./cloud-datastore-api-credentials.json

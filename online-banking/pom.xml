@@ -63,8 +63,13 @@
 			 <groupId>com.google.firebase</groupId>  
 			 <artifactId>firebase-admin</artifactId>  
 			 <version>6.11.0</version>  
-			 </dependency>  
-		</dependencies>
+		</dependency>	
+		<dependency>
+		    <groupId>com.google.appengine</groupId>
+		    <artifactId>appengine-maven-plugin</artifactId>
+		    <version>1.9.84</version>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
