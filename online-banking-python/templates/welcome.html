@@ -1,13 +1,7 @@
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
-        <title>Welcome</title>
         <style>
-        body{
-            font-family: 'Open Sans';
-        }
-        .container{
+           .container{
             padding: 1%;
             width: 60%;
             border-radius:8px;
@@ -38,17 +32,12 @@
         .set{
             padding: 20px;
         }
-        @media(max-width:1050px){
-            .container{
-                padding: 1%;
-                width: 90%;
-                border-radius:8px;
-                border: 2px solid green;
-                background-color: rgba(0,0,0,0.6);
-                margin: 30px auto;
-            }	
-		}
         </style>
+        <script>
+            function login(){
+                window.location.href = "login.html";
+            }
+        </script>
     </head>
     <body>
         <div>
@@ -58,8 +47,8 @@
         </div>
         <div class="container">
             <div>
-                <div class =  "set"><a href = "login.html" ><button id="submit" class="do you want to login">Login</button></a></div>
-                <div class =  "set"><a href = "accountOpening.html" ><button id="submit" class="do you want to open account">Account Opening</button></a></div>
+                <div class =  "set"><a href = "login.html" ><button id="submit" title="do you want to login" name="login">login</button></a></div>
+                <div class =  "set"><a href = "accountOpening.html" ><button id="submit" title="do you want to open account" name="Account_Opening">Account Opening</button></a></div>
             </div>
         </div>
     </body>
