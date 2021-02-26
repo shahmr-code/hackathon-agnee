@@ -1,7 +1,14 @@
 package com.db.hackathon.onlineBanking.model;
 
+import org.springframework.cloud.gcp.data.datastore.core.mapping.Entity;
+import org.springframework.data.annotation.Id;
+
+@Entity(name = "Address")
 public class Address {
 
+	@Id
+	private Long id;
+	
 	private String addressLine1;
 	private String addressline2;
 	private String pinCode;
@@ -19,6 +26,14 @@ public class Address {
 		this.pinCode = pinCode;
 		this.state = state;
 		this.landmark = landmark;
+	}
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getAddressLine1() {

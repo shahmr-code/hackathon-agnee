@@ -6,6 +6,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,13 +20,12 @@ import org.springframework.web.multipart.MultipartFile;
 import com.db.hackathon.onlineBanking.model.CustomerDetails;
 import com.db.hackathon.onlineBanking.service.BusinessService;
 import com.db.hackathon.onlineBanking.service.FileUploadService;
-import io.swagger.annotations.Api;
 
 @RestController
-@Api(value="Customer details api`s")
 public class CustomerOnboardingController {
 
 	@Autowired
+	@Qualifier("BusinessServiceDataStore")
 	private BusinessService businessService;
 
 	@Autowired
