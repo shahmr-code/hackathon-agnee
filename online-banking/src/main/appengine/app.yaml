@@ -1,3 +1,10 @@
+env: flex
 runtime: java
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 1
 env_variables:
   GOOGLE_APPLICATION_CREDENTIALS: ./cloud-datastore-api-credentials.json
+resources:
+  memory_gb: 4
+  

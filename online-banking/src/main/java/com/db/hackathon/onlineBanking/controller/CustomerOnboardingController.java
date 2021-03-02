@@ -31,6 +31,11 @@ public class CustomerOnboardingController {
 	@Autowired
 	private FileUploadService fileUploadService;
 	
+	@GetMapping("/message")
+	public String greetMessage() {
+		return "Hello, able to reach service";
+	}
+	
 	@PostMapping(value = "/createCustomer", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String createCustomer(@RequestBody CustomerDetails customerDetails) throws InterruptedException, ExecutionException {
 		return businessService.createCustomer(customerDetails);

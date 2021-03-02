@@ -1,22 +1,24 @@
 <html>
     <head>
-        <title>Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+        <title>Dashboard</title>
         <style>
         body{
             font-family: 'Open Sans';
         }
-        .container{
+       .container{
             padding: 1%;
             width: 60%;
             border-radius:8px;
-            border: 2px solid green;
+            border: 2px solid rgba(56, 182, 255, 0.9);
             background-color: rgba(0,0,0,0);
             margin: 30px auto;
         }
         .acctDetail{
-            background-color: rgba(0,0,0,0.6);
-            color: white;
+            border: 2px solid rgba(56, 182, 255, 0.9);
+            background-color: rgba(56, 182, 255, 0.2);
+            color: black;
             text-align: center;
             padding: 2%;
             border-radius:8px;
@@ -39,9 +41,6 @@
             width: 200px;
             margin: 0px 2% 0px 2% ;
         }
-        .empty{
-            background-color: white;
-        }
         .recentTxn{
             font-weight: 750;
             font-size: 35px;
@@ -49,13 +48,14 @@
         }
         .allTxn{
             text-align: center;
-            border: 2px solid black;
+            border: 2px solid rgba(56, 182, 255, 0.9);
             border-radius: 8px;
             padding: 2%;
         }
         .txnDate{
-            background-color: rgba(0,0,0,0.6);
-            color: white;
+            border: 2px solid rgba(56, 182, 255, 0.9);
+            background-color: rgba(56, 182, 255, 0.2);
+            color: black;
             text-align: center;
             padding: 2%;
             border-radius:8px;
@@ -70,14 +70,24 @@
             font-size: 30px;
         }
         .hrAcctDetails{
-            border: 2px dashed white;
+            border: 2px dashed black;
         }
         hr{
             margin:2% 5% 2% 5%;
         }
         a{
-            color:white;
+            color:black;
             text-decoration: none;
+        }
+        @media(max-width:800px){
+            .container{
+            padding: 1%;
+            width: 90%;
+            border-radius:8px;
+            border: 2px solid rgba(56, 182, 255, 0.9);
+            background-color: rgba(0,0,0,0);
+            margin: 30px auto;
+        }
         }
         </style>
     </head>
@@ -99,7 +109,7 @@
             </div>
             <hr style="border: 2px dashed black">
             <div>
-                <p class="recentTxn">Recent Transaction</p>
+                <p class="recentTxn">Recent Transactions</p>
             </div>
             <hr style="border: 2px dashed black">
             <div class="allTxn">
